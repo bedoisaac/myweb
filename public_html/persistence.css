@@ -1,0 +1,107 @@
+
+/* 
+   Created on : 24-Jan-2015, 7:48:13 PM
+   Author     : Isaac
+*/
+
+
+.body {
+  font-family: "Lucida Sans Unicode",  Verdana, sans-serif;
+  max-width: 800px;
+}
+
+/*Format rule that applies block display formatting it won't affect others 
+rules cus this propiety is already set to block in modern browsers it's to support older ones*/
+
+article, aside, figure, figcaption, footer, header, main, nav, section,
+summary {
+display: block;
+}
+
+
+/* Format the div that represents the header(as a blue.border box).*/
+
+.Header {
+    background-color: #7695FE;
+    border: thin #336699 solid;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    }
+    
+/*Format any <h1> headings in the header <header> (that's the art title)*/
+
+.Header h1 {
+    margin: 0px;
+    color: white;
+    font-size: xx-large;
+}
+
+/*format the subtitle in the header <header>*/
+
+.Header .Teaser{
+    margin: 0px;
+    font-weight: bold;
+}
+
+/*Format the byline in the header<header>*/
+.Header .Byline{
+    font-style: italic;
+    font-size: small;
+    margin: 0px;
+}
+
+/*Format the floating figure box.*/
+.FloatFigure{
+    float: left;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+/*Format the figure caption text*/
+.FloatFigure figcaption{
+    float: none;
+    max-width: 270px;
+    font-size: small;
+    font-style: italic;
+    margin-bottom: 5px;
+    margin-right: 0px;
+    text-align: justify
+}
+
+/*Format pullquote*/
+
+.PullQuote {
+float: right;
+max-width: 300px;
+border-top: thin black solid;
+border-bottom: thick black solid;
+font-size: 25px;
+line-height: 150%;
+font-style: italic;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-left: 15px;
+margin-bottom: 10px;
+}
+.PullQuote img {
+vertical-align: bottom;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
