@@ -7,16 +7,22 @@
  *
  *2015 (c) My company
  *
---><html lang="en">
+-->
+
+<html lang="en">
     <head>
         <meta charset="UTF-8">
+        <!--Patch to avoid IE js warnings -->
         <!-- saved from url=(0014)about:internet -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>" HTML5 "</title>
+        <!-- Patch to make semantic elements work in IE8 and below.** or check book for reference -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
         <link rel="stylesheet" href="persistence.css" />
-       <!-- <script src="scripts.js"></script-->
- 
-    </head>
+      
+     </head>
+    
     <body class="body">
       
         <header class="Header">
@@ -24,9 +30,32 @@
             <p class="Teaser">THE SUSTAINED EFFORT NECESSARY TO INDUCE FAITH.</p>
             <p class="Byline">" The Eight Step toward Riches "</p>                
         </header>
-       
         
-        
+        <aside class="NavSidebar">
+            <nav>
+                <h2>Articles related</h2>
+                <ul>
+                    <li><a href="http://www.google.com">Desire</a></li>
+                    <li><a href="http://www.google.com">Faith</a></li>
+                    <li><a href="http://www.google.com">Auto-Suggestion</a></li>
+                    <li><a href="http://www.google.com">Specialized Knowledge</a></li>
+                    <li><a href="http://www.google.com">Imagination</a></li>
+                    <li><a href="http://www.google.com">Organized Planning</a></li>
+                </ul>
+            </nav>
+            
+            <section>
+                <h2>Recommended books</h2>
+                <p>Ejemplo Ejemplo Ejemplo Ejemplo Ejemplo Ejemplo Ejemplo Ejemplo</p>
+            </section>
+            
+            <div>
+                <img src="images/h_face.jpg" alt="happy face" />
+            </div>
+        </aside>
+            
+
+        <main>
         <article>
              <p><b>PERSISTENCE</b> is an essential factor in the procedure of transmuting
             <i>DESIRE</i> into its monetary equivalent. The basis of persistence is the 
@@ -35,7 +64,7 @@
              <figure class="FloatFigure">
             <img src="images/persistence_1.jpg" alt="keep going" />
             <figcaption >Patience, persistence and perspiration make an unbeatable combination for success.</figcaption>      
-        </figure>
+            </figure>
              
             <p>Will-power and the desire, when properly combined, make an irresistible
             pair. Men who accumulate great fortunes are generally know as cold-blooded, and 
@@ -58,8 +87,11 @@
            <img src="images/quote_end.png" alt="End quote">
            </aside>
             
-            <!--El siguiente desaparece  <h1>  de la pagina-->
+            
+            <!--El siguiente desaparece  <h1>  de la pagina all <header> elements require
+               some level of heading inside, just to satisfy the rules of HTML5.-->
             <h1 style="display: none">ESto es una prueba!!!!!!!!!!</h1>
+            
             
             <p>There may be no heroic connotation to the word <q>persistence,</q> and the 
             quality is to the character of man what carbon is to steel.</p>
@@ -99,12 +131,16 @@
             of persistence you lack. The analysis may lead to discoveries  that will give you a 
             new on yourself.</p>
         </article>
+        </main>    
        
         <footer>
             <p><small>Principles of success</small></p>
             <p>Copyright ©  2015.</p>
         </footer>
+        
     
-      
+    
+    
+    
     </body>
 </html>
