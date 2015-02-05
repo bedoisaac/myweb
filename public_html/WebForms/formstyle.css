@@ -76,11 +76,33 @@ select {
   width: 254px;
 }
 
-input[type=checkbox] {
-  width: 10px;
+input[type=checkbox],[type=radio] {
+  width: 30px;
+  
 }
 
-input[type=submit] {
+input[type=submit], [type=reset], [type=range]  {
   width: 150px;
   padding: 10px;
 }
+[type=number], [type=color] {
+  width: 50px;
+  padding: 0px;
+}
+
+input:required {
+ background-color: lightyellow;
+}
+
+
+/* This is a test using an offset background see for reference http://css-tricks.com/positioning-offset-background-images/ */
+
+.test {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/star_1.png);
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: right 0px bottom 0px;
+  
+}
+
+  
