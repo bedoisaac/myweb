@@ -1,52 +1,86 @@
 <!DOCTYPE html>
-<!--
- *
- *My project
- *
- *This is where Im going to practice HTML5 and CSS3 NetBeans
- *
- *2015 (c) My company
- *
---><html lang="en">
+
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <!--Patch to avoid IE js warnings -->
         <!-- saved from url=(0014)about:internet -->
         <title>Forms</title>
-        <!-- Patch to make semantic elements work in IE8 and below -->
+       <!-- Patch to make semantic elements work in IE8 and below -->
         <!--[if lt IE 9]>
         <script src="htmlshiv/html5shiv.js"></script>
-        <![endif]-->    
+        <![endif]-->
+        
+        <!-- the html5shiv and the one .js below are practical the same 
+         -->
+        <script src="../js/modernizr-latest.js"></script>
         <link rel="stylesheet" href="formstyle.css" />
     </head>
     
     <body>
        
         <h1>Zoo Keeper Application Form</h1>
-        <form  id="zooKeeperForm" action="#">
+        
+        <!-- disable the validation feature
+            <form id="zooKeeperForm" action="processApplication.cgi" novalidate>
+            ***ver  que la segunda forma no esta dividida por <fieldset>***
+        -->
+        
+        <form  id="zooKeeperForm" action="#" method="post" enctype="multipart/form-data" >
             <p><i>Please complete the form. Mandatory fields are marked with a </i><em>*</em></p>   <br>
             <fieldset>
                 <legend>Contact Details</legend>
                 <label for="name">Name <em>*</em></label>
-                <input id="name" /><br>
+                <input  type="text" name="username" id="name" placeholder="Ramon Ramirez" autofocus  required /><br>
                 <label for="telephone">Telephone</label>
-                <input id="telephone" /><br>
-                <label for="email">Email <em>*</em></label>
-                <input id="email" /><br>
+                <input type="text" name="telephone" id="telephone" placeholder="(xxx) xxx-xxxx" required /><br>
+                <label for="email" >Email <em>*</em></label>
+                
+                <input type="text"  name="email"  id="email" /><br> <!--This error is cus I'm using the same id twice -->
+                
+                <!-- Validating with Regular Expressions  -->
+                <label for="promoCode">Promotion Code</label>
+                <input type="text" name="promocode" id="promoCode" placeholder="QRB-011" title="Your promotion code is three uppercase letters, a dash, then three numbers"
+                       pattern="[A-Z]{3}-[0-9]{3}" /> <br />
+                <label for="form-pswd">Password</label>
+                <input type="password" name="pswd" id="form-pswd" /> <br /> <br />
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date" value="2015-01-14" min="2015-01-01" max="2015-12-01" /> <br />
+                <label for="time">Time:</label>
+                <input type="time" name="time" id="time" value="03:13:00" /> <br />
+                <label for="dt">Date & Time:</label>
+                <input type="datetime" name="dt" id="dt" value="2004-01-14T03:13-09:00" /> <br />
+                <label for="dt-local">Date & Time "Local"</label>
+                <input type="datetime-local" name="dt-local" id="dt-local" value="2004-01-14T03:13" /> <br />
+                <label for="month">Month:</label>
+                <input type="month" name="month" id="month" value="2004-01" /> <br />
+                <label for="week">Week</label>
+                <input type="week" name="week" id="week" value="2004-W02" /> <br />
+                <!--when a form contains a file selection input element, you must specify the encoding type (enctype) of the form as multipart/
+                    form-data and use the POST method. -->
+                <label>Send a photo to be used as your online icon <em>(optional)</em></label>
+                <input type="file" name="photo" />
+                
             </fieldset><br>
             
             <fieldset>
                 <legend>Personal Information</legend>
-                <label for="age">Age <em>*</em></label>
-                <input id="age" /><br>
+                <label  for="age">Age <em>*</em></label>
+                <input type="number" name="age" id="age" class="test" min="0" max="100" /><br>
                 <label for="gender">Gender</label>
-                <select  id="gender">
+                <select  id="gender"  >
                     <option value="female">Female</option>
                     <option value="male">Male</option>
+                    <option value="unknow">Alien</option>
                 </select><br>
-            <label for="comments">When did you first time know you wanted to be
+                
+                <label for="weight">Weight (in pounds)</label>
+                <input id="weight" type="number" min="50" max="1000" step="0.1" value="160"><br>
+                <label for="libras">Weight (in pounds)</label> 50
+                <input id="libras" type="range" min="50" max="1000" value="760">1000<br>
+                <label for="comments">When did you first time know you wanted to be
                 a zoo-keeper?</label>
-            <textarea id="comments" ></textarea>
+                <textarea id="comments" required ></textarea>
             </fieldset><br>
             
             <fieldset>
@@ -54,19 +88,155 @@
                 <label for="zebra"><input id="zebra" type="checkbox"  />Zebra</label>
                 <label for="cat"><input id="cat" type="checkbox" />Cat</label>
                 <label for="anaconda"><input id="anaconda" type="checkbox" />Anaconda</label>
-                <label for="human"><input id="human" type="checkbox" />Human</label>
+                <label for="human"><input id="human" type="checkbox" checked="" />Human</label>
                 <label for="elephant"><input id="elephant" type="checkbox" />Elephant</label>
                 <label for="wildbeest"><input id="wildbeest" type="checkbox" />Wildbeest</label>
-                <label for="pigeon"><input id="pigeon" type="checkbox" />Pigeon</label>
+                <label for="pigeon"><input id="pigeon" type="checkbox" />Pigeon</label> <br /> <br />
+                
+                <i> What's Your Favorite Animal? </i>
+                <input id="favoriteAnimal" list="animalChoices" >
+                <datalist id="animalChoices">
+                    <option label="Alpaca" value="alpaca">
+                    <option label="Zebra" value="zebra">
+                    <option label="Cat" value="cat">
+                    <option label="Caribou" value="caribou">
+                    <option label="Caterpillar" value="caterpillar">
+                    <option label="Anaconda" value="anaconda">
+                    <option label="Human" value="human">
+                    <option label="Elephant" value="elephant">
+                    <option label="Wildebeest" value="wildebeest">
+                    <option label="Pigeon" value="pigeon">
+                    <option label="Crab" value="crab">
+                </datalist>
+                <br /> <br />
+              
+                <!-- trick that makes other browsers behave properly  <span> and <select> mark up will be ignored by supported browsers-->
+                <i>What's Your Favorite Animal?</i>
+                <datalist id="animalChoice">
+                <span >Pick an option:</span>
+                  <select id="favoriteAnimalPreset">
+                    <option label="Alpaca" value="alpaca">
+                    <option label="Zebra" value="zebra">
+                    <option label="Cat" value="cat">
+                    <option label="Caribou" value="caribou">
+                    <option label="Caterpillar" value="caterpillar">
+                    <option label="Anaconda" value="anaconda">
+                    <option label="Human" value="human">
+                    <option label="Elephant" value="elephant">
+                    <option label="Wildebeest" value="wildebeest">
+                    <option label="Pigeon" value="pigeon">
+                    <option label="Crab" value="crab">
+                 </select>
+                  <br />
+               
+                <span >Or type it in:</span>
+                </datalist>
+                <input list="animalChoice" name="list">
+                <br /> <br />
+                
+                <label for="N_guests">Numer of guests</label>
+                <input type="number" name="guests" id="N_guests" min="0" max="9" /> <br />
+                <label for="satis">Satisfaction</label>
+                <input type="range" name="satis" id="satis" min="0" max="10" step="1" /> <br />
+                <label>Your favorite color </label>
+                <input type="color" name="favorite"> <br />
+                 <!-- name="download"  attibute dont allow on the follow--> 
+                Percent downloaded: <progress max="100"  >60</progress> <br />
+                Percent downloaded: <meter min="0" max="100" value="50" >50%</meter> <br />
+                Task in progress... <progress>Task in progress ...</progress>
+                
+            </fieldset>
+            <p><input type="checkbox" name="OptIn" value="yes"> Yes, send me news and special promotions by email.</p>
+            
+           
+            
+            <input type="submit" value="Submit Appliaction" />
+            <input type="submit" value="Save for Later" formnovalidate>
+            <input type="reset" value="Start over" />
+            <input type="hidden" name="success-link" value="http://www.example.com/littlechair_thankyou.html">
+        </form>
+        
+       
+        
+        <br>
+        <br>
+        <br />
+        <br />
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--This form is another example some css rules may no apply -->
+        
+        <form action="/mailinglist.php" method="get">
+            <fieldset>
+                <legend>Join our email list</legend>
+                <p>Get news about the band such as tour dates and special MP3
+                releases sent to your own in-box.</p>
+                <ol>
+                    <li><label for="firstlast">Name:</label>
+                    <input type="text" name="username" id="firstlast"></li>
+                    <li><label for="email">Email:</label>
+                    <input type="text" name="email" id="email"></li>
+                    <li><label>City
+                    <input type="text" name="city" id="form-city" value="Your Hometown" maxlength="50"></label></li>
+                </ol><br />
+     
+                <p>Official contest entry:<br>
+                Tell us why you love the band. Five winners will get backstage passes!</p>
+                <textarea name="contest_entry" placeholder="50 words or less">
+                </textarea>
+                <br />    <br />
+                <p>How old are you?</p>
+                <input type="radio" name="age" value="under24 checked" />under 24. <br />
+                <input type="radio" name="age" value="25-34" />25 to 34. <br />
+                <input type="radio" name="age" value="35-44" />35 to 44. <br />
+                <input type="radio" name="age" value="over45"/>over 45. <br /> <br />
+                <br /><br /><br /><br />
+                <!--si quitamos los valores solo aparecera una opcion y las demas  cuando se de click  -->
+            <p>Escoje tu sabor. </p>
+            <select name="icecream" size="7" multiple>
+                <optgroup label="traditional">
+                    <option >vanilla</option>
+                    <option >chocolate</option>
+                </optgroup>
+                <optgroup label="fancy">
+                    <option >Super praline</option>
+                    <option >Nut surprise</option>
+                    <option >Candy corn</option>
+                </optgroup>
+            </select>
+                <ul>
+                    <li><label>Add me to your mailing list  <input type="radio" name="list" value="yes" checked="checked"></label></li>
+                    <li><label>No thanks <input type="radio" name="list" value="no"></label></li>
+                </ul>
+            
+            
+                <input type="submit" value="Submit">
             </fieldset>
             
-            <p><input type="submit" value="Submit Appliaction" /></p>
-        
+            
+            
+            
+    
+            
         </form>
+        
+    <details>
+        <summary>Upcoming Topics</summary>
+        <p>For the new year, we have a great line up of articles!</p>
+           <ul>
+               <li>Understanding the Outline Algorithm</li>
+               <li>When to Use <code>hgroup</code></li>
+               <li>Machine Semantics with Microdata</li>
+        </ul>
+    </details>
       
-        
-        
-        
+      
         
     </body>
 </html>
