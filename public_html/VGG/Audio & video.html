@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+ *
+ *My project
+ *
+ *This is where Im going to practice HTML5 and CSS3 NetBeans
+ *
+ *2015 (c) My company
+ *
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+        <!-- Patch to avoid annoying IE js warnings  -->
+        <!-- Saved from url=(0014)about:internet -->
+        <title>A & V</title>
+        <!-- Patch to make work semantic elements in IE8 and below -->
+         <!--[if lt IE 9]>
+        <script src="htmlshiv/html5shiv.js"></script>
+        <![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- the html5shiv and the one .js below are practical the same 
+         -->
+        <script src="../js/modernizr-latest.js"></script>
+        <link rel="stylesheet" href="" />
+    </head>
+    
+    <body>
+       <p>Hear us rock out with new song, <cite>Lupe Fiasco - Deliver</cite>: </p>
+    <audio src="http://stuffdown.com/2015/Lupe%20Fiasco%20-%20Tetsuo%20&%20Youth%20-%20(www.SongsLover.pk)/12.%20Deliver%20-%20(www.SongsLover.pk).mp3" controls preload="none" ></audio> 
+    <p><cite>Usher - Don't mind me (feat. Juicy J.)</cite></p>
+    <audio src="http://stuffdown.com/2015/Best%20Of%202014%20(Part1-1to20)%20(www.SongsLover.cc)/14%20-%20Usher%20-%20I%20Don't%20Mind%20(feat.%20Juicy%20J)%20-%20(www.SongsLover.cc).mp3" controls preload="none" ></audio>
+    <p><cite>Lupe Fiasco - The show goes on.</cite></p> 
+    <audio src="../VA/Lupe_Fiasco-TheShowGoesOn.mp3" controls preload="none" ></audio>
+    <!--the one above recommended  attributes -->
+    <p><cite>Misha Mishenko - Sol.</cite></p>
+    <audio src="../VA/Misha _Mishenko-Sol.mp3" preload="none" controls></audio>
+    <p><cite>Scythelence - Julight.</cite></p>
+    <audio src="../VA/Scythelence-Julight.mp3"controls preload="none" ></audio>
+    <p><cite>Signal Hill - The Dead Vineyard.</cite></p>
+    <audio src="../VA/Signal_Hill-The_Dead_Vineyard.mp3" preload="auto" controls></audio>
+    <p><cite>Crying Guitar.</cite></p>
+    <!--The next is  a fallback the ogg file doesn't exist it's just a example can include other 
+        opt formats -->
+    <audio controls autoplay loop >
+        <source src="../VA/Crying_Guitar.mp3" type="audio/mp3">          
+        <source src="../VA/Crying_Guitar.ogg" type="audio/ogg">
+        <p><cite>Guitar</cite></p>
+    </audio>
+   
+    <p><cite>Funny Animation</cite></p>
+    <video src="../VA/Funny_Animation.mp4"controls preload="metadata" width="400" height="312" poster="../images/happydog.jpg"  ></video>
+   
+    <video controls width="400" height="312" poster="../images/happydog.jpg">
+        <source src="../VA/The_Egyptian_Pyramids.mp4" type="video/mp4">
+        <source src="../VA/The_Egyptian_Pyramids.webm" type="video/webm" >
+        <source src="../VA/The_Egyptian_Pyramids.ogv" type="video/ogg" >
+        <p>This is a fallback video </p>
+    </video>
+    
+    
+    
+    </body>
+</html>
