@@ -1,0 +1,192 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8-Feb-2015, 10:28:52 AM
+    Author     : Isaac
+*/
+
+body {
+    font-family: Verdana;
+    font-size: 15px;
+    background: url('cloud.jpg');
+    background-attachment:fixed;
+}
+
+div {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    
+}
+
+.transparent1 {
+    opacity: 0.5;
+    font-style: italic
+}
+
+.transparent1 img {
+    float: left;
+    margin-right: 20px;
+    transform: rotate(20deg);
+    
+}
+
+.transparent1 p {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-weight: bold;
+}
+
+.transparent2 {
+    background-color: rgba(61,227,227,0.5);
+    border: thin darkblue solid;
+    padding: 18px;
+    font-style: italic
+}
+
+.shadow3 {
+    background-color: #7695FE;
+    border: thin black solid;
+    padding: 13px;
+    width: 100px;
+    text-align: center;
+    background:yellow;
+    box-shadow: 0px 0px 20px turquoise inset;
+}
+
+.rounded1{
+    border-top-right-radius: 50px;
+    padding: 20px;
+    background: khaki;
+    border: 2px solid black;
+    width: 600px;
+
+}
+
+.rounded2{
+    border-top-right-radius: 150px 50px;
+    padding: 20px;
+    background: khaki;
+    border: 2px solid black;
+    width: 600px;
+
+}
+
+.rounded3{
+  border-top-left-radius: 150px 30px;
+  border-top-right-radius: 100px 50px;
+  border-bottom-left-radius: 40px 90px;
+  border-bottom-right-radius: 20px 75px;
+  padding: 20px;
+  background: khaki;
+  border: 2px solid black;
+  width: 600px;
+
+ }
+ 
+ .decorateBox {
+  width: 400px;
+  height: 270px;
+  border: 1px solid gray;
+  margin: 20px;
+  transform: scale(1) skew(10deg);
+  background: transparent;
+  background-image: url('grass.png'), url('rainbow.png');
+  background-position:  bottom, right bottom;
+  background-repeat: repeat-x, no-repeat;
+  transform: matrix(n2);
+}
+
+.decorateBox p {
+  margin: 50px;
+  color: rgb(255,104,0);
+  font-weight: bold;
+
+}
+
+.shadowedBox{
+    border: thin #336699 solid;
+    border-radius: 25px;
+    box-shadow: 5px 5px  10px  green ;
+    width: 400px;
+
+    
+}
+
+.shadowedBox2{
+    border: blue solid;
+    border-radius: 30px;
+    box-shadow:0px 0px 20px red inset;
+    width: 400px;
+    
+        
+    
+}
+
+.TextShadow{
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: green 10px 10px 7px;
+}
+
+
+/* when working with gradients must use vendor prefix */ 
+.gradients{
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    font-weight: bold;
+    background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 20%, #121059 35%, #47116b 63%, #7db9e8 81%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,#1e5799), color-stop(35%,#121059), color-stop(63%,#47116b), color-stop(81%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #1e5799 20%,#121059 35%,#47116b 63%,#7db9e8 81%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #1e5799 20%,#121059 35%,#47116b 63%,#7db9e8 81%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #1e5799 20%,#121059 35%,#47116b 63%,#7db9e8 81%); /* IE10+ */
+background: linear-gradient(to bottom,  #1e5799 20%,#121059 35%,#47116b 63%,#7db9e8 81%); /* W3C */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+}
+
+.Button{
+    color:  #041604 ;
+    font-weight: bold;
+    padding: 10px;
+    border: solid 1px #009932;
+    width: 100px;
+    text-align: center;
+    background: #009900 ;
+    border-radius: 30px;
+    cursor: pointer;
+}
+     
+.Button:hover{
+    color: #055d05;
+    background: limegreen;
+  
+}
+
+.slickbutton{
+    color:#041604 ;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 30px;
+    border: solid 1px black;
+    background: #009900 ;
+    -webkit-transition: background 0.5s color 0.5s;
+    transition: all 0.5s;
+    opacity: 0.5;
+    /* Both are the same */ 
+}
+
+.slickbutton:hover{
+    color: black;
+    background: #006600;
+    box-shadow: 4px 3px 5px yellowgreen ;    
+    opacity: 1;
+    width: 200px;
+   
+}
